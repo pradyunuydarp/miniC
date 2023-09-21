@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g3
-SRC_DIR = /Users/pradyundevarakonda/Downloads/project/src
-OUTPUT_DIR = /Users/pradyundevarakonda/Downloads/project/src/output
+SRC_DIR = #The path to 'src' folder of this repo
+OUTPUT_DIR = #The path to 'output' folder in src
 OUTPUT_NAME = main
 SRC_FILES = main.c interpreter.c variable.c print.c arithmetic.c condition.c
 
