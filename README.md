@@ -28,6 +28,7 @@ NOTE: Syntax for conditions:
         1.  if(condition){
             //code
         }
+       
         2.  if condition {
             //code
         }
@@ -48,21 +49,26 @@ PRINTING FORMAT:
     1. the 'print' keyword is used.
         to print a variable(say: 'x'), use:
             print x;
+            
     2. to print strings, enclose them within parentheses '()'. 
         Example:
             print (Hello World!);
+            
     3. to print a '\n' character(to move to the next line), use the '~' character outside the parentheses. 
         Example:
             print (Hey)~ (How are you?);
                 output: 
                     Hey
                     How are you?
+                    
     4. to print a '\t' character(to 'tab'), use the '!' character outside the parentheses. 
         Example:
             print (Hey)! (How are you?);
                 output: 
                     Hey     How are you? 
+                    
     5. You can use any number of '~' and '!' operators
+    
     6. You can print the final values of arithmetic expressions as well. 
         Example:
             int x = 9;
