@@ -10,7 +10,7 @@ The miniC project
    
 4. The output executable 'main' can be found in src/output
 
-5. This project as of now supports assignment, arithmetic, conditional(if/else conditions), and a printing format.
+5. This project as of now supports assignment, arithmetic, conditionals(if/else conditions), and a printing format.
 
 6. You can have upto 15 alphabetic characters for your variable name
 
