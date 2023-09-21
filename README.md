@@ -21,7 +21,6 @@ NOTE: Syntax for conditions:
             //code
         }
     AND(if there's an else case)
-
         else{
             //code
         }
