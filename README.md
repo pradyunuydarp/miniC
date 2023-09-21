@@ -14,6 +14,8 @@ The miniC project
 
 NOTE: To do any kind of assignment(even after initialization) please specify the variable type (int)
 NOTE: Syntax for conditions:
+
+
         1.  if(condition){
             //code
         }
