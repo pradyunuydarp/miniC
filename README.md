@@ -44,6 +44,7 @@ NOTE:
     2. The project does not support BODMAS, it strictly evaluates expressions from left to right with no operator preference 
     
 PRINTING FORMAT:
+
     1. the 'print' keyword is used.
         to print a variable(say: 'x'), use:
             print x;
