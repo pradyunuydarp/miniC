@@ -17,13 +17,9 @@ NOTE: Syntax for conditions:
         1.  if(condition){
             //code
         }
-    OR 
-    
         2.  if condition {
             //code
         }
-    AND(if there's an else case)
-
         else{
             //code
         }
