@@ -7,6 +7,7 @@ The miniC project
 2. There are source files: interpreter.c, arithmetic.c, condition.c, print.c, variable.c, and main.c in src
  
 3. The main.c is where you write C-- code, inside the code[] character array
+   
 4. The output executable 'main' can be found in src/output
 
 5. This project as of now supports assignment, arithmetic, conditional(if/else conditions), and a printing format.
