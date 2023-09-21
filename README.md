@@ -21,6 +21,7 @@ The miniC project
 9. There is no notion of variable scope- any variable declared anywhere above can be used anywhere below
 
 NOTE: To do any kind of assignment(even after initialization) please specify the variable type (int)
+
 NOTE: Syntax for conditions:
 
 
