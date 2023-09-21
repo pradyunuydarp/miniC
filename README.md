@@ -3,13 +3,21 @@ The miniC project
 
 1. There are header files: interpreter.h, arithmetic.h, condition.h, print.h, and variable.h in 
     project/include
-2. There are source files: interpreter.c, arithmetic.c, condition.c, print.c, variable.c, and main.c in     project/src  
+   
+2. There are source files: interpreter.c, arithmetic.c, condition.c, print.c, variable.c, and main.c in project/src
+ 
 3. The main.c is where you write C-- code, inside the code[] character array
+
 4. This project as of now supports assignment, arithmetic, conditional(if/else conditions), and a printing format.
+
 5. You can have upto 15 alphabetic characters for your variable name
+
 6. This project also supports nested conditions
+   
 7. You can use any kind of arithmetic/conditional expressions as a condition for if/else
+
 8. The project is space-independent(like c)- except for the keywords
+   
 9. There is no notion of variable scope- any variable declared anywhere above can be used anywhere below
 
 NOTE: To do any kind of assignment(even after initialization) please specify the variable type (int)
@@ -30,6 +38,7 @@ NOTE: Syntax for conditions:
         }
 
 NOTE:
+
     1. You can only use alphabets to name variables
     2. The project does not support BODMAS, it strictly evaluates expressions from left to right with no operator preference 
     
