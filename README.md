@@ -22,7 +22,9 @@ NOTE: Syntax for conditions:
         2.  if condition {
             //code
         }
+        
         (if there is an else case)
+        
         else{
             //code
         }
