@@ -8,209 +8,13 @@
 #include "../include/arithmetic.h"
 #include "../include/condition.h"
 
- struct var* vars[1000];
+struct var* vars[1000];
 long numvars = 0;
 struct stack conditionals;
-int assignment(char* code, int p_holder,char* o){
-    long val =0;
-    int i = p_holder;
-                long value =0;
-                // Find variable name
-                while (code[i] == ' ') {
-                    i++;
-                }
-                
-                char varname[16];
-                long j = 0;
-                while (code[i] != ' ' && code[i] != ';' && code[i] != '\0') {
-                    varname[j++] = code[i++];
-                }
-                varname[j] = '\0';
-                // Check for "=" sign
-                while (code[i] == ' '&& code[i]!= ';') {
-                    i++;
-                }
-                create_variable(varname);
-                if (code[i] == '=') {
-                    i++; // Skip "="
-                    // Find the value to assign
-                    while (code[i] == ' ') {
-                        i++;
-                    }
-                    while(code[i] != ';'){
-                        if(isdigit(code[i])){
-                            char valstr[16];
-                            long k = 0;
-                            while (code[i] != ' ' && code[i] != ';' && code[i] != '\0' && isdigit(code[i])) {
-                                valstr[k++] = code[i++];
-                            }
-                            valstr[k] = '\0';
-                            value = atoi(valstr);
-                            // Convert the value to an integer and assign
-                            if(o[0] =='N'){ 
-                                val = value;
-                            }
-                            else{
-                                char op[2];
-                                op[0] = o[0];
-                                op[1] = '\0';
-                                val = perform_arithmetic(val,op,value);
-                                o[0] = 'N';
-                            } 
-                        }
-                        while (code[i] == ' ') {
-                                i++;
-                            }
-                        if(isalpha(code[i])){
-                            char probably_var[16];
-                            long k = 0;
-                            while (code[i] != ' ' && code[i] != ';' && code[i] != '\0' && isalpha(code[i])) {
-                                probably_var[k++] = code[i++];
-                            }
-                            probably_var[k] = '\0';
-                            long num1 = get_variable_value(probably_var);
-                            while (code[i] == ' ') {
-                                i++;
-                            }
-                            if(o[0]=='N'){
-                                val = num1;
-                            }
-                            if(o[0]!='N'){
-                                char op[2];
-                                op[0] = o[0];
-                                op[1] = '\0';
-                                val = perform_arithmetic(val,op,num1);
-                                o[0] = 'N';
-                            }      
-                        }
-                        while (code[i] == ' ' && code[i]!=';') {
-                            i++;
-                        }          
-                        if(code[i]=='+'||code[i]=='-'||code[i]=='/'||code[i]=='^'||code[i]=='%'){
-                            o[0] = code[i];i++;
-                        }
-                        while (code[i] == ' ') {
-                                i++;
-                            }
-                        if(code[i]==';'){
-                            // val = value;
-                            assign_variable(varname, val);
-                            break;
-                            
-                        }    
 
-                    }
-                }
-            return i;
-} 
-int print(char*code, char* o, int p_holder){
-    int i = p_holder;
-    long val =0;
-    long value =0;
-    while(code[i]!=';'){ 
-                // Find the variable name to print
-                while (code[i] == ' ') {
-                    i++;
-                }
-                if(code[i]=='('){
-                    i++;
-                    while(code[i]!=')'){
-                        printf("%c",code[i]);
-                        i++;
-                    }
-                    i++;
-                }
-                    if(code[i]=='~'||code[i]=='!'){
-                        while(code[i]!=';'&& code[i]!=' '){
-                            if(code[i]=='~'){
-                                printf("\n");
-                                i++;
-                            } 
-                            if(code[i]=='!'){
-                                printf("\t");
-                                i++;
-                            }
-                            if(code[i]==' '||code[i]=='('){
-                                break;
-                            }
-                        }
-                    }
-                while (code[i] == ' ') {
-                    i++;
-                }
-                if(code[i]==';')break;
-                if(code[i]!='('){
-                    while (code[i] == ' ') {
-                        i++;
-                    }
-                    while(code[i] != ';'){
-                        if(isdigit(code[i])){
-                            char valstr[16];
-                            long k = 0;
-                            while (code[i] != ' ' && code[i] != ';' && code[i] != '\0' && isdigit(code[i])) {
-                                valstr[k++] = code[i++];
-                            }
-                            valstr[k] = '\0';
-                            value = atoi(valstr);
-                            // Convert the value to an integer and assign
-                            if(o[0] =='N'){ 
-                                val = value;
-                            }
-                            else{
-                                char op[2];
-                                op[0] = o[0];
-                                op[1] = '\0';
-                                val = perform_arithmetic(val,op,value);
-                                o[0] = 'N';
-                            } 
-                        }
-                        while (code[i] == ' ') {
-                                i++;
-                            }
-                        if(isalpha(code[i])){
-                            char probably_var[16];
-                            long k = 0;
-                            while (code[i] != ' ' && code[i] != ';' && code[i] != '\0' && isalpha(code[i])) {
-                                probably_var[k++] = code[i++];
-                            }
-                            probably_var[k] = '\0';
-                            long num1 = get_variable_value(probably_var);
-                            while (code[i] == ' ') {
-                                i++;
-                            }
-                            if(o[0]=='N'){
-                                val = num1;
-                            }
-                            if(o[0]!='N'){
-                                char op[2];
-                                op[0] = o[0];
-                                op[1] = '\0';
-                                val = perform_arithmetic(val,op,num1);
-                                o[0] = 'N';
-                            }      
-                        }
-                        while (code[i] == ' ' && code[i]!=';') {
-                            i++;
-                        }          
-                        if(code[i]=='+'||code[i]=='-'||code[i]=='/'||code[i]=='^'||code[i]=='%'){
-                            o[0] = code[i];i++;
-                        }
-                        while (code[i] == ' ') {
-                                i++;
-                            }
-                        if(code[i]==';'||code[i]=='~'||code[i]=='!'||code[i]=='('){
-                            printf("%ld",val);
-                            break;
-                            
-                        }    
-
-                    } 
-                }
-            }
-            return i;
-}
 void execute_c_minus_minus(char *code) {
     long i = 0;
+    long osize = 2;
     bool condition_check=false;
     conditionals.top = -1;
     char* o = (char*)(malloc(5*sizeof(char)));
@@ -227,14 +31,13 @@ void execute_c_minus_minus(char *code) {
         }
         else if (strstr(&code[i], "print") == &code[i]) {
             i += 5; // Skip "print"
-            i = print(code,o,i);
+            i = print(code,o,i,osize);
         }
         if(strstr(&code[i], "if") == &code[i]){
             conditionals.top++;
             condition_counter++;
             condition_check=true;
             i+=2;
-            long osize = 2;
             long evaluated_val=0;
             while((code[i]!='{' || code[i]!=';')&&condition_check){
                 while(code[i]=='(' || code[i]==' '){

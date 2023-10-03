@@ -22,6 +22,8 @@ The miniC project
    
 10. There is no notion of variable scope- any variable declared anywhere above can be used anywhere below
 
+11. Supported arithmetic operations - '+','-','*','/','%','**'
+
 NOTE: To do any kind of assignment(even after initialization) please specify the variable type (int)
 
 NOTE: Syntax for conditions:

@@ -21,7 +21,6 @@ struct stack{
 extern struct var* vars[1000];
 extern long numvars;
 extern struct stack op_stack;
+extern int osize;
 void execute_c_minus_minus(char *code);
-int assignment(char* code, int p_holder, char*o);
-int print(char*code, char* o, int p_holder);
 #endif /* INTERPRETER_H */

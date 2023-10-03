@@ -4,17 +4,17 @@ int main() {
     char code[] ={
         "print(Hey this is my first program in nuydarp)~ (I'm so excited!!)! (hey)~;"
         "int var = 8;"
-        "print var%4~;"
+        "print 2**5~;"
         "print ( This is var)! var~;"
         "int y =  var/2;"
         "print (This is the value of y:)y~;" 
         "int z = 10 + y;"
         "print (z-9:)z-9~;"
-        "print (Hey)~ (How are you?)~;"
+        "print (Hey)!! (How are you?)~;"
         " int z = var-1;"
         "   print (z- )z~;"
         " print 7+z~;"
-        "if (var||0) {"
+        "if (var&&0) {"
         "    int w = 20;"
         "    int k = z - var     ;"
          "    print w~;"
@@ -38,16 +38,18 @@ int main() {
               "print var/9~! y~;"
         "}"
         "int u  = 8;"
-        // "print(u is)u~;"
-        // "if(u ==8){"
-            // "print 78~;"
-        // "}"
-        // "}"
+        "print(hi);"
+        "if(u==8){"
+            "print(hi);"
+            "print(u is)u~;"
+            "if(u>=8){"
+                "print 78~;"
+            "}"
+        "}"
         // ";"
     };
 
 
     execute_c_minus_minus(code);
-    // printf("hi");
     return 0;
 }
