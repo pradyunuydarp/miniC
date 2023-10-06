@@ -13,6 +13,7 @@
 #define NAMESIZE 16
 #define NUMVARS 1000
 #define STACKARRSIZE 1000
+#define OPSIZE 5
 struct var{
     char name[NAMESIZE];
     long val;
