@@ -10,15 +10,18 @@
 #include <math.h>
 #include <stdlib.h>
 #include <ctype.h>
+#define NAMESIZE 16
+#define NUMVARS 1000
+#define STACKARRSIZE 1000
 struct var{
-    char name[16];
+    char name[NAMESIZE];
     long val;
 };
 struct stack{
-    int arr[1000];
+    int arr[STACKARRSIZE];
     int top;
 };
-extern struct var* vars[1000];
+extern struct var* vars[NUMVARS];
 extern long numvars;
 extern struct stack op_stack;
 extern int osize;
