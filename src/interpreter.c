@@ -7,8 +7,10 @@
 #include "../include/print.h"
 #include "../include/arithmetic.h"
 #include "../include/condition.h"
-
-struct var* vars[1000];
+#define NUMVARS 1000
+#define OPSIZE 5
+#define NAMESIZE 16
+struct var* vars[NUMVARS];
 long numvars = 0;
 struct stack conditionals;
 
@@ -17,7 +19,7 @@ void execute_c_minus_minus(char *code) {
     long osize = 2;
     bool condition_check=false;
     conditionals.top = -1;
-    char* o = (char*)(malloc(5*sizeof(char)));
+    char* o = (char*)(malloc(OPSIZE*sizeof(char)));
     o[0]= 'N';
     long condition_counter=0;
     while (code[i] != '\0') {
@@ -45,7 +47,7 @@ void execute_c_minus_minus(char *code) {
                 }
                 if(isdigit(code[i])&& condition_check){
                     long value = 0;
-                    char valstr[16];
+                    char valstr[NAMESIZE];
                     long k = 0;
                     while (code[i] != ' ' && code[i] != ';' && code[i] != ')' && code[i] != '\0' && isdigit(code[i]) && condition_check) {
                         valstr[k++] = code[i++];
@@ -89,7 +91,7 @@ void execute_c_minus_minus(char *code) {
                 }
                 if(isalpha(code[i])&&condition_check){
                     long num1 = 0;
-                    char valstr[16];
+                    char valstr[NAMESIZE];
                     long k = 0;
                     while (code[i] != ' ' && code[i] != ';' && code[i] != '\0' && isalpha(code[i])) {
                         valstr[k++] = code[i++];
