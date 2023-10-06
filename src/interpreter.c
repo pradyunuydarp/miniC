@@ -7,9 +7,7 @@
 #include "../include/print.h"
 #include "../include/arithmetic.h"
 #include "../include/condition.h"
-#define NUMVARS 1000
-#define OPSIZE 5
-#define NAMESIZE 16
+
 struct var* vars[NUMVARS];
 long numvars = 0;
 struct stack conditionals;
