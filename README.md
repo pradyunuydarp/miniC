@@ -1,4 +1,4 @@
-The miniC project                
+The miniC project                                          
                             Custom Syntax interpreter
 
 1. There are header files: interpreter.h, arithmetic.h, condition.h, print.h, and variable.h in 
