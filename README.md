@@ -83,4 +83,4 @@ RUNNING:
 You can use the 'make' command in the project's directory after modifying the Makefile.
 You can also use this one-line command to compile and generate the executable instead of using the makefile
 
-					gcc -Wall -Wextra -g3 (path to /src/main.c) (path to /src/interpreter.c) (path to /src/variable.c) (path to /src/print.c) (path to /src/arithmetic.c) (path to /src/condition.c) -o (path to the executable you want to generate /output/main)
+	gcc -Wall -Wextra -g3 (path to /src/main.c) (path to /src/interpreter.c) (path to /src/variable.c) (path to /src/print.c) (path to /src/arithmetic.c) (path to /src/condition.c) -o (path to the executable you want to generate /output/main)
