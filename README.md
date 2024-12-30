@@ -1,5 +1,5 @@
 # The miniC project                                          
-                                            # **Custom Syntax interpreter**
+                                            # Custom Syntax interpreter
 
 1. There are header files: interpreter.h, arithmetic.h, condition.h, print.h, and variable.h in 
    include
@@ -10,13 +10,13 @@
    
 4. The output executable 'main' can be found in src/output
 
-5. This project as of now supports assignment, arithmetic, conditionals(if/else conditions), and a printing format.
+5. This project currently supports assignment, arithmetic, conditionals(if/else conditions), and a printing format.
 
-6. You can have upto 15 alphabetic characters for your variable name
+6. You can have up to 15 alphabetic characters for your variable name
 
 7. This project also supports nested conditions
    
-8. You can use any kind of arithmetic/conditional expressions as a condition for if/else
+8. You can use any arithmetic/conditional expressions as a condition for if/else
 
 9. The project is space-independent(like c)- except for the keywords
    
@@ -24,7 +24,7 @@
 
 11. Supported arithmetic operations - '+','-','*','/','%','**'
 
-NOTE: To do any kind of assignment(even after initialization) please specify the variable type (int)
+NOTE: To do any assignment(even after initialization) please specify the variable type (int)
 
 NOTE: Syntax for conditions:
 
@@ -80,7 +80,8 @@ PRINTING FORMAT:
                 output:
                     0
 RUNNING:
-You can use the 'make' command in the project's directory after modifying the Makefile.
+After modifying the Makefile(as indicated in it), you can use the 'make' command in the project's directory.
+	make
 You can also use this one-line command to compile and generate the executable instead of using the makefile
 
 	gcc -Wall -Wextra -g3 (path to /src/main.c) (path to /src/interpreter.c) (path to /src/variable.c) (path to /src/print.c) (path to /src/arithmetic.c) (path to /src/condition.c) -o (path to the executable you want to generate /output/main)
